@@ -24,9 +24,7 @@ app = Flask(__name__)
 
 @app.route('/hello/<name>')
 def sayHello(name):
-   return render_template("SayHello.html", name=name)
-
-@app.route('/games')
+   return@app.route('/games')
 def double():
    games = [
      {
@@ -46,7 +44,9 @@ def double():
      }
    ]
    games.append({ 'naam': 'sjaak'})
-   return render_template("Games.html", spellen=games)
+   return render_template("Games.html", spellen=games) render_template("SayHello.html", name=name)
+
+
 
 @app.route('/activiteiten')
 def activiteiten():
@@ -61,6 +61,10 @@ def films():
 def filminfo():
     film = { "naam": "The Matrix", "jaar": 1999, "speelduur": 136, "opbrengst": 463517383 }
     return render_template("FilmInfo.html", filminfo=film)
+
+@app.route('/')
+def hoofdpagina():
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
