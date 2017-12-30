@@ -13,9 +13,9 @@
 
 from flask import Flask, render_template
 import json,urllib
-
-dataJSON = urllib.request.urlopen("https://open.data.amsterdam.nl/Activiteiten.json").read()
-data = json.loads(dataJSON.decode())
+data = []
+# dataJSON = urllib.request.urlopen("https://open.data.amsterdam.nl/Activiteiten.json").read()
+# data = json.loads(dataJSON.decode())
 
 #with urllib.request.urlopen("https://open.data.amsterdam.nl/Activiteiten.json") as url:
 #    data = json.loads(url.read().decode())
