@@ -24,7 +24,9 @@ app = Flask(__name__)
 
 @app.route('/hello/<name>')
 def sayHello(name):
-   return@app.route('/games')
+   return render_template("SayHello.html", name=name)
+
+@app.route('/games')
 def double():
    games = [
      {
@@ -44,9 +46,7 @@ def double():
      }
    ]
    games.append({ 'naam': 'sjaak'})
-   return render_template("Games.html", spellen=games) render_template("SayHello.html", name=name)
-
-
+   return render_template("Games.html", spellen=games)
 
 @app.route('/activiteiten')
 def activiteiten():
