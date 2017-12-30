@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activiteiten</title>
+    <link rel="stylesheet" href="static/opmaak.css">
+
+</head>
+<body>
+    <form action="/activiteiten" methode="POST">
+        Naam: <input type="text" name="naam"> <br>
+
+        <input type="submit" value="Zoek">
+    </form>
+
+    {% for ac in activiteiten %}
+        {{ ac.title }} <br>
+    {% endfor %}
+</body>
+</html>
+

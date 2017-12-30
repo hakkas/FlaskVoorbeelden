@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mijn webpagina</title>
+</head>
+<body>
+    {% if name == "Henk" %}
+        <h1>Van harte welkom {{ name }}</h1>
+    {% else %}
+        <h1>Welkom {{ name }}</h1>
+    {% endif %}
+
+    <ul id="navigation">
+      {% for i in range(10) %}
+          <li>Dit is nummer {{ i }}</li>
+      {% endfor %}
+    </ul>
+</body>
+</html>
+

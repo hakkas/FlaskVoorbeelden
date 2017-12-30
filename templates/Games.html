@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mijn favoriete spellen</title>
+    <link rel="stylesheet" href="static/opmaak.css">
+</head>
+<body>
+    <h1>Mijn favoriete spellen</h1>
+
+
+    <table id="favospellen">
+      {% for spel in spellen %}
+          <tr>
+              <td>{{ spel.naam }}</td>
+              <td><img class="plaatjes" src={{ spel.urlplaatje }} alt=""></td>
+          </tr>
+      {% endfor %}
+    </table>
+
+</body>
+</html>

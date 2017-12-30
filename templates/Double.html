@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mijn webpagina</title>
+</head>
+<body>
+    <h1>Dubbel {{ hoi }}</h1>
+
+
+    <ul id="navigation">
+      {% for post in lijstje %}
+          <li>Dit is een post van {{ post.author.username }}</li>
+      {% endfor %}
+    </ul>
+
+</body>
+</html>
+

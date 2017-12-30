@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Films</title>
+    <link rel="stylesheet" href="static/opmaak.css">
+
+</head>
+<body>
+    <h1>Lijst van mijn favoriete films</h1>
+    <ul>
+    {% for film in filmlijst %}
+        <li>{{ film }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
