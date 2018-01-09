@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request
 import json,urllib
 data = []
-# dataJSON = urllib.request.urlopen("https://open.data.amsterdam.nl/Activiteiten.json").read()
-# data = json.loads(dataJSON.decode())
+dataJSON = urllib.request.urlopen("https://open.data.amsterdam.nl/Activiteiten.json").read()
+data = json.loads(dataJSON.decode())
 
 app = Flask(__name__)
 
