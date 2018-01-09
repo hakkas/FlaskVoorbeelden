@@ -1,24 +1,8 @@
-# <script>
-#   // Initialize Firebase
-#   var config = {
-#     apiKey: "AIzaSyBLUs5F1bEISGGUSmxbCLU9-ukjbd4VKVs",
-#     authDomain: "flaskvoorbeelden.firebaseapp.com",
-#     databaseURL: "https://flaskvoorbeelden.firebaseio.com",
-#     projectId: "flaskvoorbeelden",
-#     storageBucket: "",
-#     messagingSenderId: "11272403912"
-#   };
-#   firebase.initializeApp(config);
-# </script>
-
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import json,urllib
 data = []
 # dataJSON = urllib.request.urlopen("https://open.data.amsterdam.nl/Activiteiten.json").read()
 # data = json.loads(dataJSON.decode())
-
-#with urllib.request.urlopen("https://open.data.amsterdam.nl/Activiteiten.json") as url:
-#    data = json.loads(url.read().decode())
 
 app = Flask(__name__)
 
@@ -65,6 +49,19 @@ def filminfo():
 @app.route('/')
 def hoofdpagina():
     return render_template("index.html")
+
+@app.route('/BerichtFormulier')
+def BerichtFormulier():
+    return render_template("BerichtFormulier.html")
+
+@app.route('/VerwerkFormulier', methods=["POST"])
+def VerwerkFormulier():
+    naam = request.form['gebruikersnaam']
+    mailadres = request.form['gebruikersemail']
+    bericht = request.form['bericht']
+
+
+    return render_template("VerwerkFormulier.html", name = naam, ma = mailadres, ber = bericht)
 
 
 if __name__ == "__main__":
